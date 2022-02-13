@@ -1,0 +1,22 @@
+.profile__btn_action_edit {
+    background-image: url(../../../../images/pen.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #fff;
+    width: 24px;
+    height: 24px;
+    align-self: end;
+}
+
+@media screen and (max-width: 644px) {
+    .profile__btn_action_edit {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: -28px;
+    }
+}
+
+.profile__btn_action_edit:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Место</title>
+</head>
+
+
+<body class="page">
+    <header class="header">
+        <img src="./images/logo.svg" alt="логотип Место России" class="header__logo">
+    </header>
+
+    <main class="content">
+
+        <section class="profile">
+            <div class="profile__container">
+                <img src="./images/Jacques.jpg" alt="фото профиля" class="profile__avatar" title='Изменить фото'>
+                <div class="profile__info">
+                    <div class="profile__box">
+                        <p class="profile__name">Жак-Ив Кусто</p>
+                        <button class="profile__btn profile__btn_action_edit" type="button" title="Редактировать профиль"></button>
+                    </div>
+                    <p class="profile__profession">Исследователь океана</p>
+                </div>
+            </div>
+            <button class="profile__btn profile__btn_action_add" type="button" title="Добавить карточку"></button>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <img src="./images/karach.jpg" alt="Сентинский храм" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Карачаевск</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images//elbrus.jpg" alt="Эльбрус" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Гора Эльбрус</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Домбай</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images//elbrus.jpg" alt="Эльбрус" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Гора Эльбрус</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Домбай</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/karach.jpg" alt="Сентинский храм" class="card__image">
+                <div class="card__rectangle">
+                    <p class="card__text">Карачаево-Черкесская республика</p>
+                    <img src="./images/like_disabled.svg" alt="изображение сердечка" class="card__like">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+
+
+    <!-- Попап -->
+    <section class="popup">
+        <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+        <form class="popup__form">
+            <h3 class="popup__heading">Редактировать профиль</h3>
+            <input class="popup__item" type="text" minlength="2" required>
+            <input class="popup__item" type="text" minlength="2" required>
+            <button class="popup__btn popup__btn_action_submit" type="submit" title="Сохранить и закрыть форму">
+                Сохранить
+            </button>
+        </form>
+    </section>
+
+    <!-- Подкоючили скрипт -->
+    <script src="./scripts/index.js"></script>
+
+
+</body>
+
+</html>

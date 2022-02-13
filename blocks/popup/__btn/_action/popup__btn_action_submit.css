@@ -1,0 +1,17 @@
+.popup__btn_action_submit {
+    background-color: #000000;
+    border-radius: 2px;
+    height: 50px;
+    margin-top: 48px;
+}
+
+@media screen and (max-width: 950px) {
+    .popup__btn_action_submit {
+        margin-top: 45px;
+        height: 46px;
+    }
+}
+
+.popup__btn_action_submit:hover {
+    opacity: 0.8;
+}
