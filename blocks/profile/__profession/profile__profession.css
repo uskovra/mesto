@@ -2,7 +2,7 @@
     margin-block-start: 0;
     margin-block-end: 0;
     color: #FFFFFF;
-    font-family: Inter;
+    /*font-family: Inter; все шрифты подключены в .page, тут забыл удалить*/
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

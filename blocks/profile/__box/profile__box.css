@@ -1,15 +1,13 @@
 .profile__box {
     display: flex;
     gap: 18px;
-    height: 39px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 @media screen and (max-width: 644px) {
     .profile__box {
         position: relative;
-        height: 26px;
         gap: 0;
     }
 }

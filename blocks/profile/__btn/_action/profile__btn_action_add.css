@@ -20,4 +20,5 @@
 
 .profile__btn_action_add:hover {
     opacity: 0.6;
+    transition: 1s;
 }

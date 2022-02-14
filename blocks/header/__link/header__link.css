@@ -1,0 +1,20 @@
+.header__link {
+    display: block;
+    width: 142px;
+    height: 33px;
+    background-image: url(./../../../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: 950px) {
+    .header__link {
+        width: 103.74px;
+        height: 24.4px;
+    }
+}
+
+.header__link:hover {
+    opacity: 0.6;
+    transition: 1s;
+}

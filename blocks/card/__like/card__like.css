@@ -1,9 +1,0 @@
-.card__like {
-    height: 19px;
-    width: 19px;
-    padding: 5px 5px 0 0;
-}
-
-.card__like:hover {
-    opacity: 0.5;
-}
