@@ -1,8 +1,5 @@
 // Саша, привет. Спасибо за ревью
-// Вроде все поправил, но везде где убрал height(а я его именно для этого и добалял), 
-// у меня текст поднялся и как его опустить я не знаю
-// Перелопалил кучу статей - тишина
-// Подскажи как полечить, плиз. https://disk.yandex.ru/i/g54pPhQIn0-c3w
+// Спасибо за подсказку с outline
 
 
 // mask
@@ -14,11 +11,11 @@ const popup = document.querySelector('.popup');
 // кнопка закрытия попапа 
 const popupCloseButton = popup.querySelector('.popup__btn_action_close');
 
-// форма
-const popupName = popup.querySelector('.popup__name');
+// имя формы
+const popupName = popup.querySelector('.popup__item_field_name');
 
 // профессия формы
-const popupProfession = popup.querySelector('.popup__profession');
+const popupProfession = popup.querySelector('.popup__item_field_profession');
 
 // форма редактирования профиля
 const popupSubmitForm = popup.querySelector('.popup__form');

@@ -15,7 +15,6 @@
 
         <header class="header">
             <a href='#' class="header__link"></a>
-            <!-- <img src="./images/logo.svg" alt="логотип Место России" class="header__logo">  -->
         </header>
 
         <main class="content">
@@ -94,10 +93,11 @@
     <!-- Попап -->
     <article class="popup">
         <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+
         <form class="popup__form" name="profile_edit_form">
             <h3 class="popup__heading">Редактировать профиль</h3>
-            <input class="popup__name" name="profile_name" type="text" minlength="2" required>
-            <input class="popup__profession" name="profile_profession" type="text" minlength="2" required>
+            <input class="popup__item popup__item_field_name" name="profile_name" type="text" minlength="2" required>
+            <input class="popup__item popup__item_field_profession" name="profile_profession" type="text" minlength="2" required>
             <button class="popup__btn popup__btn_action_submit" type="submit" title="Сохранить и закрыть форму">
                 Сохранить
             </button>
