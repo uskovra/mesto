@@ -3,4 +3,6 @@
     font-size: 0;
     background: #FFFFFF;
     border-radius: 10px;
+    list-style-type: none;
+    position: relative;
 }

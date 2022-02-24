@@ -32,56 +32,8 @@
                 <button class="profile__btn profile__btn_action_add" type="button" title="Добавить карточку"></button>
             </section>
 
-            <section class="cards">
-                <article class="card">
-                    <img src="./images/karach.jpg" alt="Сентинский храм" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Карачаевск</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="./images//elbrus.jpg" alt="Эльбрус" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Гора Эльбрус</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Домбай</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="./images//elbrus.jpg" alt="Эльбрус" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Гора Эльбрус</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Домбай</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="./images/karach.jpg" alt="Сентинский храм" class="card__image">
-                    <div class="card__rectangle">
-                        <h2 class="card__text">Карачаево-Черкесская республика</h2>
-                        <button class="card__btn card__btn_action_disabled" type="button" title="Жми, если нравлюсь"></button>
-                    </div>
-                </article>
-            </section>
-
+            <ul class="cards">
+            </ul>
         </main>
 
         <footer class="footer">
@@ -90,22 +42,60 @@
 
     </div>
 
-    <!-- Попап -->
-    <article class="popup">
-        <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
 
-        <form class="popup__form" name="profile_edit_form">
+    <!-- Попап редактирования профиля-->
+    <article class="popup popup_type_form" id="editProfile">
+        <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+        <form class="popup__form popup__form_type_edit" name="profile_edit_form">
             <h3 class="popup__heading">Редактировать профиль</h3>
-            <input class="popup__item popup__item_field_name" name="profile_name" type="text" minlength="2" required>
-            <input class="popup__item popup__item_field_profession" name="profile_profession" type="text" minlength="2" required>
+            <input class="popup__item popup__item_field_one" name="profile_name" type="text" minlength="2" required>
+            <input class="popup__item popup__item_field_two" name="profile_profession" type="text" minlength="2" required>
             <button class="popup__btn popup__btn_action_submit" type="submit" title="Сохранить и закрыть форму">
                 Сохранить
             </button>
         </form>
     </article>
 
+
+    <!-- Попап добавления карточки-->
+    <article class="popup popup_type_form" id="addCard">
+        <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+        <form class="popup__form popup__form_type_add" name="card_add_form">
+            <h3 class="popup__heading">Новое место</h3>
+            <input class="popup__item popup__item_field_one" name="place_name" type="text" minlength="2" placeholder="Название" required>
+            <input class="popup__item popup__item_field_two" name="place_link" type="text" minlength="2" placeholder="Ссылка на картинку" required>
+            <button class="popup__btn popup__btn_action_submit" type="submit" title="Добавить карточку">
+                Добавить
+            </button>
+        </form>
+    </article>
+
+
+    <!-- Попап картинки-->
+    <article class="popup popup_type_image">
+        <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+        <img class="popup__image" src="">
+        <p class="popup__text"></p>
+    </article>
+
+
+    <!-- шаблон карточки -->
+    <template class="card-tamplate">
+            <li class="card">
+                <img class="card__image">
+                <div class="card__rectangle">
+                    <h2 class="card__text">test</h2>
+                    <button class="card__btn-like" type="button" title="Жми, если нравлюсь"></button>
+                </div>
+                <button class="card__btn-delete" type="button" title="Удалить карточку"></button>
+            </li>
+      </template>
+
+
     <!-- Подкоючили скрипт -->
     <script src="./scripts/index.js"></script>
+
+
 
 
 </body>

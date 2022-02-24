@@ -1,0 +1,15 @@
+.card__btn-delete {
+    border: none;
+    width: 18px;
+    height: 19px;
+    background: url(../../../images/busket.svg) center bottom no-repeat, url(../../../images/cap.svg) center top no-repeat;
+    background-size: 15.44px, 18px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.card__btn-delete:hover {
+    opacity: 0.5;
+    transition: 1s;
+}

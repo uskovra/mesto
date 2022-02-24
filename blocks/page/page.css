@@ -29,7 +29,7 @@ li,
 header,
 figure,
 figcaption,
-footer
- {
+footer,
+button {
     outline: 0.01px solid yellow;
 } */

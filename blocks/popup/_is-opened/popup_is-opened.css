@@ -1,3 +1,12 @@
 .popup_is-opened {
     display: flex;
+    flex-direction: column;
+    /* opacity: 0;
+    transition: all 2s linear; */
 }
+
+
+/* 
+.popup_is-opened:hover {
+    opacity: 1;
+} */

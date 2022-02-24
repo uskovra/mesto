@@ -1,4 +1,7 @@
 .cards {
+    padding-left: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
     margin: 47.25px auto 67px;
     display: grid;
     grid-template-rows: auto;
