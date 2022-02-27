@@ -2,11 +2,6 @@
 @import url(../vendor/fonts/fonts.css);
 @import url(../blocks/page/page.css);
 
-/* mask */
-
-@import url(../blocks/mask/_shade-on/mask_shade-on.css);
-@import url(../blocks/mask/_shade-on-dark/mask_shade-on-dark.css);
-
 /* header */
 
 @import url(../blocks/header/header.css);
@@ -46,6 +41,7 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_type/popup_type_form.css);
 @import url(../blocks/popup/_type/popup_type_image.css);
+@import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/_is-opened/popup_is-opened.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__heading/popup__heading.css);
@@ -55,8 +51,10 @@
 @import url(../blocks/popup/__btn/popup__btn.css);
 @import url(../blocks/popup/__btn/_action/popup__btn_action_close.css);
 @import url(../blocks/popup/__btn/_action/popup__btn_action_submit.css);
-@import url(../blocks/popup/_type/popup_type_image.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__text/popup__text.css);
 
 /* template */
+
+@import url(../modal/modal.css);
+@import url(../modal/__content/modal__content.css);
