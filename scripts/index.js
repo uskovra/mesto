@@ -48,6 +48,8 @@ const popupAddCardSubmitForm = popupAddCard.querySelector('#addForm'); // сел
 
 /* попап картинки */
 const popupImage = document.querySelector('#image'); // селектор попапа
+const popupImagePicture = popupImage.querySelector('.popup__image') // селектор картинки
+const popupImageText = popupImage.querySelector('.popup__text') // селектор текста
 const popupImageCloseButton = popupImage.querySelector('.popup__btn_action_close'); // селектор кнопки закрытия
 
 
@@ -63,7 +65,7 @@ function createCard(name, link) {
     card.querySelector('.card__btn-like').addEventListener('click', llkeToggle);
     card.querySelector('.card__btn-delete').addEventListener('click', cardDelete);
     card.querySelector('.card__image').addEventListener('click', () => {
-        openPopup(popupImage), transferDataToImagePopup(popupImage)
+        openPopup(popupImage), transferDataToImagePopup()
     });
 
     return card
@@ -112,11 +114,11 @@ function transferDataToProfile(selector) {
 };
 
 // функция переноса данных в попап с изображением
-function transferDataToImagePopup(selector) {
+function transferDataToImagePopup() {
     text = event.target.closest('.card').querySelector('.card__text').textContent
-    selector.querySelector('.popup__image').src = event.target.src
-    selector.querySelector('.popup__image').alt = `фото ${text}`
-    selector.querySelector('.popup__text').textContent = text
+    popupImagePicture.src = event.target.src
+    popupImagePicture.alt = `фото ${text}`
+    popupImageText.textContent = text
 };
 
 
