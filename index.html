@@ -47,12 +47,17 @@
     <!-- Попап редактирования профиля-->
     <section class="popup popup_type_form" id="editProfile">
         <div class="popup__container">
-            <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
-            <form class="popup__form" id="editForm" name="profile_edit_form">
+            <button class="popup__btn-close" type="button" title="Закрыть форму"></button>
+            <form class="popup__form" id="editForm" name="profile_edit_form" novalidate>
                 <h3 class="popup__heading">Редактировать профиль</h3>
-                <input class="popup__item" name="profileName" type="text" minlength="2" placeholder="Имя" required>
-                <input class="popup__item" name="profileJob" type="text" minlength="2" placeholder="Призвание" required>
-                <button class="popup__btn popup__btn_action_submit" id="editButton" type="submit" title="Сохранить и закрыть форму">
+
+                <input class="popup__input" name="profileName" type="text" minlength="2" maxlength="40" placeholder="Имя" required>
+                <span class="popup__input-error" id="profileNameError"></span>
+
+                <input class="popup__input" name="profileJob" type="text" minlength="2" maxlength="200" placeholder="Призвание" required>
+                <span class="popup__input-error" id="profileJobError"></span>
+
+                <button class="popup__btn-submit" id="editButton" type="submit" title="Сохранить и закрыть форму">
                     Сохранить
                 </button>
             </form>
@@ -63,12 +68,17 @@
     <!-- Попап добавления карточки-->
     <section class="popup popup_type_form" id="addCard">
         <div class="popup__container">
-            <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
-            <form class="popup__form" id="addForm" name="card_add_form">
+            <button class="popup__btn-close" type="button" title="Закрыть форму"></button>
+            <form class="popup__form" id="addForm" name="card_add_form" novalidate>
                 <h3 class="popup__heading">Новое место</h3>
-                <input class="popup__item" name="placeName" type="text" minlength="2" placeholder="Название" required>
-                <input class="popup__item" name="placeLink" type="text" minlength="2" placeholder="Ссылка на картинку" required>
-                <button class="popup__btn popup__btn_action_submit" id="addButton" type="submit" title="Добавить карточку">
+
+                <input class="popup__input" name="placeName" type="text" minlength="2" maxlength="30" placeholder="Название" required>
+                <span class="popup__input-error" id="placeNameError"></span>
+
+                <input class="popup__input" name="placeLink" type="url" minlength="2" placeholder="Ссылка на картинку" required>
+                <span class="popup__input-error" id="placeLinkError"></span>
+
+                <button class="popup__btn-submit popup__btn-submit_disabled" id="addButton" type="submit" title="Добавить карточку" disabled>
                 Добавить
             </button>
             </form>
@@ -79,7 +89,7 @@
     <!-- Попап картинки-->
     <section class="popup popup_type_image" id="image">
         <div class="popup__container">
-            <button class="popup__btn popup__btn_action_close" type="button" title="Закрыть форму"></button>
+            <button class="popup__btn-close" type="button" title="Закрыть форму"></button>
             <img class="popup__image">
             <p class="popup__text"></p>
         </div>
@@ -99,8 +109,9 @@
     </template>
 
 
-    <!-- Подкоючили скрипт -->
+    <!-- Подкоючили скрипты -->
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 
 
 </body>
