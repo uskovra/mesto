@@ -26,7 +26,7 @@ const initialCards = [{
 
 
 
-const cardsList = document.querySelector('.cards'); // тег ul, куда будем добавлять карточки
+const cardsContainer = document.querySelector('.cards'); // тег ul, куда будем добавлять карточки
 const cardTemplateContent = document.querySelector('.card-tamplate').content; // забираем содержимое шаблона
 const popups = document.querySelectorAll('.popup') //все попапы
 
@@ -41,7 +41,7 @@ const popupEditProfileOpenButton = document.querySelector('.profile__btn_action_
 const popupEditProfileCloseButton = popupEditProfile.querySelector('.popup__btn-close'); // селектор кнопки закрытия 
 const popupEditProfileSubmitForm = popupEditProfile.querySelector('#editForm'); // селектор формы
 
-/* попап добавления карточки */
+// /* попап добавления карточки */
 const popupAddCard = document.querySelector('#addCard'); // селектор попапа 
 const popupAddCardOpenButton = document.querySelector('.profile__btn_action_add'); // селектор кнопки добавления
 const popupAddCardCloseButton = popupAddCard.querySelector('.popup__btn-close'); // селектор кнопки закрытия
@@ -58,15 +58,16 @@ const popupImageCloseButton = popupImage.querySelector('.popup__btn-close'); // 
 // функция создания карточки
 function createCard(name, link) {
     const card = cardTemplateContent.cloneNode(true);
+    const cardImage = card.querySelector('.card__image');
 
     card.querySelector('.card__text').textContent = name;
-    card.querySelector('.card__image').src = link;
-    card.querySelector('.card__image').alt = `фото ${name}`;
+    cardImage.src = link;
+    cardImage.alt = `фото ${name}`;
 
     card.querySelector('.card__btn-like').addEventListener('click', llkeToggle);
     card.querySelector('.card__btn-delete').addEventListener('click', cardDelete);
     card.querySelector('.card__image').addEventListener('click', () => {
-        openPopup(popupImage), transferDataToImagePopup();
+        transferDataToImagePopup(), openPopup(popupImage);
     });
 
     return card
@@ -74,7 +75,7 @@ function createCard(name, link) {
 
 // функция добавления карточки
 function renderCard(card) {
-    cardsList.prepend(card);
+    cardsContainer.prepend(card);
 };
 
 // функция пролайкиавния
@@ -90,6 +91,8 @@ function cardDelete(event) {
 // функция открытия попапа
 function openPopup(selector) {
     selector.classList.add('popup_is-opened');
+    selector.addEventListener('click', () => closePopupByClickOnOverlay(selector))
+    document.addEventListener('keydown', () => closePopupByClickOnEscape(selector))
 };
 
 // функция закрытия попапа
@@ -145,26 +148,22 @@ initialCards.reverse().forEach(elem => renderCard(createCard(elem.name, elem.lin
 
 
 // 'слушаем'
-popupEditProfileOpenButton.addEventListener('click', () => { openPopup(popupEditProfile), transferDataToEditPopup(popupEditProfileSubmitForm) });
+popupEditProfileOpenButton.addEventListener('click', () => { transferDataToEditPopup(popupEditProfileSubmitForm), openPopup(popupEditProfile) });
 popupEditProfileCloseButton.addEventListener('click', () => closePopup(popupEditProfile));
 popupEditProfileSubmitForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    transferDataToProfile(popupEditProfileSubmitForm);
     closePopup(popupEditProfile);
+    transferDataToProfile(popupEditProfileSubmitForm);
 });
 
 
-popupAddCardOpenButton.addEventListener('click', () => { openPopup(popupAddCard), cleanFieldsAddPopup(popupAddCardSubmitForm) });
+popupAddCardOpenButton.addEventListener('click', () => { cleanFieldsAddPopup(popupAddCardSubmitForm), openPopup(popupAddCard) });
 popupAddCardCloseButton.addEventListener('click', () => closePopup(popupAddCard));
 popupAddCardSubmitForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    renderCard(createCard(popupAddCardSubmitForm.placeName.value, popupAddCardSubmitForm.placeLink.value));
     closePopup(popupAddCard);
+    renderCard(createCard(popupAddCardSubmitForm.placeName.value, popupAddCardSubmitForm.placeLink.value));
 });
 
 
 popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
-
-
-popups.forEach(elem => elem.addEventListener('click', () => closePopupByClickOnOverlay(elem)))
-popups.forEach(elem => document.addEventListener('keydown', () => closePopupByClickOnEscape(elem))) // ожидаю, что вместо document надо использовать elem, но так не работает
